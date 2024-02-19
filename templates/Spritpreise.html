@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internetseite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Spritpreise.css') }}">
+
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: url({{ url_for('static', filename='zapfsäule1.jpg') }});
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+
+        }
+        .headline {
+            color: rgb(17, 0, 255);
+            font-size: 60px;
+        }
+        .überschrift {
+            display: flex;
+            justify-content: center;
+        }
+        .Tabelle {
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            padding: 10px;
+        }
+        .dis1 {
+            display: flex;
+            justify-content: center;
+        }
+        .dis2 {
+            display: flex;
+            justify-content: center;
+        }
+        .dis3 {
+            display: flex;
+            justify-content: center;
+        }
+        .hsn1 {
+            display: flex;
+            justify-content: right;
+        }
+        .hsn2 {
+            display: flex;
+            justify-content: right;
+        }
+        .hsn3 {
+            display: flex;
+            justify-content: right;
+        }
+        .eingabefeld {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .fehlermeldung {
+            display: flex;
+            justify-content: center;
+        }
+        .dropdown {
+            display: flex;
+            justify-content: center;
+        }
+        .video1 {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+    </style>
+
+</head>
+
+<meta http-equiv="refresh" content="3600">
+
+<body>
+    <div class="überschrift">
+        <b1 class="headline">
+        <b>Spritpreise</b>
+        </b1>
+    </div>
+    <table class="Tabelle">
+        <tr>
+            <th>Name</th>
+            <th>Straße</th>
+            <th>Hs.Nr.</th>
+            <th>Ort</th>
+            <th>&nbsp;Distanz</th>
+            <th>&nbsp;Diesel</th>
+            <th>&nbsp;Super</th>
+            <th>E10</th>
+        </tr>
+        <tr>
+          <td>{{ station0["brand"] }}</td>
+          <td>{{ station0["street"] }}</td>
+          <td class="hsn1">{{ station0["houseNumber"] }}</td>
+          <td>&nbsp;{{ station0["place"] }}</td>
+          <td class="dis1">{{ station0["dist"] }}&nbsp;Km</td>
+          <td >{{ station0["diesel"] }}</td>
+          <td>{{ station0["e5"] }}</td>
+          <td>{{ station0["e10"] }}</td>
+         </tr>
+         <tr>
+          <td>{{ station1["brand"] }}</td>
+          <td>{{ station1["street"] }}</td>
+          <td class="hsn1">{{ station1["houseNumber"] }}</td>
+          <td>&nbsp;{{ station1["place"] }}</td>
+          <td class="dis1">{{ station1["dist"] }}&nbsp;Km</td>
+          <td>{{ station1["diesel"] }}</td>
+          <td>{{ station1["e5"] }}</td>
+          <td>{{ station1["e10"] }}</td>
+           </tr>
+           <tr>
+          <td>{{ station2["brand"] }}</td>
+          <td>{{ station2["street"] }}</td>
+          <td class="hsn1">{{ station2["houseNumber"] }}</td>
+          <td>&nbsp;{{ station2["place"] }}</td>
+          <td class="dis1">{{ station2["dist"] }}&nbsp;Km</td>
+          <td >{{ station2["diesel"] }}</td>
+          <td>{{ station2["e5"] }}</td>
+          <td>{{ station2["e10"] }}</td>
+           </tr>
+      </table>
+
+
+    <form class="eingabefeld" method="post">
+        <label for="address">Adresse:</label>
+        <input type="text" id="address" name="address">
+        <select name="distance">
+            <option value="5">Radius: 5 km</option>
+            <option value="10">Radius: 10 km</option>
+            <option value="15">Radius: 15 km</option>
+            <option value="25">Radius: 25 km</option>
+        </select>
+        <button type="submit">Preis abfragen</button>
+    </form>
+
+    {% if error %}
+    <p class="fehlermeldung" style="color: red;">Falsche Eingabe, bitte erneut versuchen!</p>
+    {% endif %}
+
+    <div class="video1">
+        <video width="250" height="250" autoplay loop muted>
+        <source src="{{ url_for('static', filename='werbung.mp4') }}" type="video/mp4">
+        </video>
+   </div>
+
+</body>
+
+</html>
+
+
+
+

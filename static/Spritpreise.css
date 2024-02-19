@@ -1,0 +1,68 @@
+<style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: url({{ url_for('static', filename='zapfsäule1.jpg') }});
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .headline {
+            color: rgb(17, 0, 255);
+            font-size: 60px;
+        }
+        .überschrift {
+            display: flex;
+            justify-content: center;
+        }
+        .Tabelle {
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            padding: 10px;
+        }
+        .dis1 {
+            display: flex;
+            justify-content: center;
+        }
+        .dis2 {
+            display: flex;
+            justify-content: center;
+        }
+        .dis3 {
+            display: flex;
+            justify-content: center;
+        }
+        .hsn1 {
+            display: flex;
+            justify-content: right;
+        }
+        .hsn2 {
+            display: flex;
+            justify-content: right;
+        }
+        .hsn3 {
+            display: flex;
+            justify-content: right;
+        }
+        .eingabefeld {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .fehlermeldung {
+            display: flex;
+            justify-content: center;
+        }
+        .dropdown {
+            display: flex;
+            justify-content: center;
+        }
+        #video1 {
+            width: 360px;
+            height: 360px;
+            overflow: hidden;
+        }
+
+
+    </style>
