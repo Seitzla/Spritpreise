@@ -1,6 +1,6 @@
 # Spritpreise
 
-Es werden folgende Librariy benötigt: 
+Es werden folgende Librariy benötigt:/n 
 pip install pytankerkoenig
 pip install Flask
 
