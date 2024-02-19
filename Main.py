@@ -31,10 +31,10 @@ def start():
     success, latitude, longitude = get_coordinates(address)
 
 
-    data = pytankerkoenig.getNearbyStations('3776ce9c-a245-4fe1-6e13-76e69be761d9', latitude, longitude, distance, 'all', 'dist')
+    data = pytankerkoenig.getNearbyStations('00000000000000000000000000000000000000', latitude, longitude, distance, 'all', 'dist') #Hier muss ein eigener API Key eingetragen werden
     stations = data["stations"]
     if not stations:
-        data = pytankerkoenig.getNearbyStations('3776ce9c-a245-4fe1-6e13-76e69be761d9', "49.453872", "11.077298", "100", 'all', 'dist')
+        data = pytankerkoenig.getNearbyStations('000000000000000000000000000000000000', "49.453872", "11.077298", "100", 'all', 'dist') #Hier muss ein eigener API Key eingetragen werden
         stations = data["stations"]
         success = False
 
